@@ -231,6 +231,16 @@ const initialState = [{ // Estado inicial
 const itensSlice = createSlice({ // Criação do slice
   name: 'itens',  // Nome do slice
   initialState, // Estado inicial do slice
+  reducers: { // Reducers do slice que serão exportados e utilizados em outros lugares    
+    mudarFavorito: (state, { payload }) => {
+      state = state.map(item => {
+        if(item.id === payload) item.favorito = !item.favorito;
+        return item;
+      })
+    }
+  }
 });
+
+export const { mudarFavorito } = itensSlice.actions; // Exportação das actions
 
 export default itensSlice.reducer;
