@@ -1,23 +1,17 @@
-import Header from 'components/Header'
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import Header from 'components/Header';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
-const Categoria = () => {
-
-    const { nomeCategoria } = useParams();
-
-    const categorias = useSelector(state => state.categorias.find(categoria => categoria.id === nomeCategoria)) // pega o estado do reducer categorias
-
+export default function Categoria() {
+  const { nomeCategoria } = useParams();
+  const categoria = useSelector(state => state.categorias.find(categoria => categoria.id === nomeCategoria));
   return (
     <div>
-        <Header
-            titulo={categorias.nome}
-            descricao={categorias.descricao}
-            imagem={categorias.header}
-        />
+      <Header
+        titulo={categoria.nome}
+        descricao={categoria.descricao}
+        imagem={categoria.header}
+      />
     </div>
   )
 }
-
-export default Categoria

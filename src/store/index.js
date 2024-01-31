@@ -1,12 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit'
-import categoriasSlice from './reducers/categorias'
-import itensSlice from './reducers/itens'
+import { configureStore } from '@reduxjs/toolkit';
+import categoriasSlice from './reducers/categorias';
+import itensSlice from './reducers/itens';
 
-const store = configureStore({ // équivalent à createStore
-    reducer: { // são os reducers
-        categorias: categoriasSlice,// nome do reducer que será usado no componente
-        itens: itensSlice// nome do reducer que será usado no componente
-    },
-})
+const store = configureStore({
+  reducer: {
+    categorias: categoriasSlice,
+    itens: itensSlice,
+  }
+});
 
 export default store;

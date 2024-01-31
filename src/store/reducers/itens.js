@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuid } from 'uuid';
 import assistenteVirtual from 'assets/itens/assistente-virtual.png';
 import airpod from 'assets/itens/airpod.png';
@@ -26,7 +26,7 @@ import caixaSomBluetooth from 'assets/itens/caixa-som-bluetooth.png';
 import miniSystem from 'assets/itens/mini-system.png';
 import tablet from 'assets/itens/tablet.png';
 
-const estadoInicial = [{
+const initialState = [{
   titulo: 'Assistente virtual',
   descricao: 'Conheça nosso smart speaker de maior sucesso ainda melhor. O novo design de áudio com direcionamento frontal (1 speaker de 1,6") garante mais graves e um som completo.',
   foto: assistenteVirtual,
@@ -228,10 +228,9 @@ const estadoInicial = [{
   categoria: 'som'
 }];
 
-
-const itensSlice = createSlice({ // cria o reducer
-    name: 'itens', // nome do reducer
-    initialState: estadoInicial, // estado inicial    
-})
+const itensSlice = createSlice({
+  name: 'itens',
+  initialState,
+});
 
 export default itensSlice.reducer;
