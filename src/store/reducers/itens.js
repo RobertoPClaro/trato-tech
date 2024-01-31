@@ -26,7 +26,7 @@ import caixaSomBluetooth from 'assets/itens/caixa-som-bluetooth.png';
 import miniSystem from 'assets/itens/mini-system.png';
 import tablet from 'assets/itens/tablet.png';
 
-const initialState = [{
+const initialState = [{ // Estado inicial
   titulo: 'Assistente virtual',
   descricao: 'Conheça nosso smart speaker de maior sucesso ainda melhor. O novo design de áudio com direcionamento frontal (1 speaker de 1,6") garante mais graves e um som completo.',
   foto: assistenteVirtual,
@@ -228,9 +228,9 @@ const initialState = [{
   categoria: 'som'
 }];
 
-const itensSlice = createSlice({
-  name: 'itens',
-  initialState,
+const itensSlice = createSlice({ // Criação do slice
+  name: 'itens',  // Nome do slice
+  initialState, // Estado inicial do slice
 });
 
 export default itensSlice.reducer;

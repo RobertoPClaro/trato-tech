@@ -10,7 +10,7 @@ import escritorioHeader from 'assets/categorias/header/escritorio.png';
 import jogosHeader from 'assets/categorias/header/jogos.png';
 import somHeader from 'assets/categorias/header/som.png';
 
-const initialState = [{
+const initialState = [{ // Estado inicial
   nome: 'Eletrônicos',
   thumbnail: eletronicosThumb,
   header: eletronicosHeader,
@@ -42,9 +42,9 @@ const initialState = [{
   descricao: 'Curta suas músicas e seus filmes com a melhor qualidade!'
 }];
 
-const categoriasSlice = createSlice({
-  name: 'categorias',
-  initialState,
+const categoriasSlice = createSlice({ // Criação do slice
+  name: 'categorias', // Nome do slice
+  initialState, // Estado inicial do slice
 });
 
 export default categoriasSlice.reducer;

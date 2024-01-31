@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 export default function Home() {
-  const navigate = useNavigate();
-  const categorias = useSelector(state => state.categorias);
+  const navigate = useNavigate(); // Hook de navegação
+  const categorias = useSelector(state => state.categorias); // Pegando as categorias do estado
   return (
     <div>
       <Header
