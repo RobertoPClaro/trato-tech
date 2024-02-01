@@ -6,11 +6,13 @@ import Item from 'components/Item';
 
 export default function Categoria() {
   const { nomeCategoria } = useParams(); // Pegando o parâmetro da URL
-  const { categoria, itens } = useSelector(state => ({
-    categoria: state.categorias.find(categoria => categoria.id === nomeCategoria), // Pegando a categoria do estado
-    itens: state.itens.filter(item => item.categoria === nomeCategoria), // Pegando os itens do estado
-  }));
-
+  const { categoria, itens } = useSelector(state => {
+    const regexp = new RegExp(state.busca, 'i');
+    return {
+      categoria: state.categorias.find(categoria => categoria.id === nomeCategoria), // Pegando a categoria do estado
+      itens: state.itens.filter(item => item.categoria === nomeCategoria && item.titulo.match(regexp))// Pegando os itens do estado e filtrando pela categoria
+    }
+  });
 
   return (
     <div>
@@ -21,7 +23,7 @@ export default function Categoria() {
       />
       <div className={styles.itens}>
         {itens?.map(item => (
-          <Item key={item.id} {...item}/>
+          <Item key={item.id} {...item} />
         ))}
       </div>
     </div>
