@@ -24,10 +24,11 @@ const carrinhoSlice = createSlice({ // Criação do slice
                 if (itemNoCarrinho.id === payload.id) itemNoCarrinho.quantidade += payload.quantidade;
                 return itemNoCarrinho;
             })
-        }
+        },
+        resetarCarrinho: () => initialState,
     }
 });
 
-export const { mudarCarrinho, mudarQuantidade } = carrinhoSlice.actions;
+export const { mudarCarrinho, mudarQuantidade, resetarCarrinho } = carrinhoSlice.actions;
 
 export default carrinhoSlice.reducer;
